@@ -97,6 +97,7 @@ function moveTo(i, j) {
       if (gBallCount === 0) victory()
       document.querySelector('.collected-balls').innerText = gCollectedBallCount
       document.querySelector('.ball-count').innerText = gBallCount
+      BALL_COLLCET.load()
       BALL_COLLCET.play()
       break
     case GLUE:
