@@ -29,7 +29,7 @@ function initGame() {
   gBallCount = 0
   gCollectedBallCount = 0
   renderBoard(gBoard)
-  document.querySelector('.game-over').classList.remove('show')
+  document.querySelector('.game-over').classList.remove('shown')
   document.querySelector('.collected-balls').innerText = gCollectedBallCount
   document.querySelector('.ball-count').innerText = gBallCount
   startBallInterval()
