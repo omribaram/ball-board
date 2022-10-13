@@ -207,7 +207,6 @@ function startBallInterval(speed = 1000) {
     if (gBallCount % 15 === 0) {
       clearInterval(gIntervals.ball)
       startBallInterval(1000 - gBallCount * 10)
-      console.log(1000 - gBallCount * 10)
     }
   }, speed)
 }
