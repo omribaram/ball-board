@@ -29,7 +29,7 @@ function initGame() {
   gBallCount = 0
   gCollectedBallCount = 0
   renderBoard(gBoard)
-  document.querySelector('.game-over').style.visibility = 'hidden'
+  document.querySelector('.game-over').classList.remove('shown')
   document.querySelector('.collected-balls').innerText = gCollectedBallCount
   document.querySelector('.ball-count').innerText = gBallCount
   startBallInterval()
@@ -59,7 +59,6 @@ function buildBoard(rows, cols) {
   return board
 }
 
-// Render the board to an HTML table
 function renderBoard(board) {
   var strHTML = ''
 
@@ -127,7 +126,7 @@ function victory() {
   clearInterval(gIntervals.ball)
   clearInterval(gIntervals.glue)
   clearInterval(gIntervals.stopwatch)
-  document.querySelector('.game-over').style.visibility = 'visible'
+  document.querySelector('.game-over').classList.add('shown')
 }
 
 function addGlue() {
@@ -202,12 +201,13 @@ function startStopwatch() {
   }, 31)
 }
 
-function startBallInterval(speed) {
+function startBallInterval(speed = 1000) {
   gIntervals.ball = setInterval(() => {
     addBall()
     if (gBallCount % 15 === 0) {
       clearInterval(gIntervals.ball)
       startBallInterval(1000 - gBallCount * 10)
+      console.log(1000 - gBallCount * 10)
     }
   }, speed)
 }
