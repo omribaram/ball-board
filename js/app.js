@@ -198,14 +198,14 @@ function startStopwatch() {
   const startTime = Date.now()
   gIntervals.stopwatch = setInterval(() => {
     const elapsedTime = (Date.now() - startTime) / 1000
-    document.querySelector('.stopwatch').innerText = elapsedTime.toFixed(3)
+    document.querySelector('.stopwatch span').innerText = elapsedTime.toFixed(3)
   }, 31)
 }
 
-function startBallInterval(speed = 1000) {
+function startBallInterval(speed) {
   gIntervals.ball = setInterval(() => {
     addBall()
-    if (gBallCount === 10 || gBallCount === 30 || gBallCount === 50 || gBallCount === 70) {
+    if (gBallCount % 15 === 0) {
       clearInterval(gIntervals.ball)
       startBallInterval(1000 - gBallCount * 10)
     }
