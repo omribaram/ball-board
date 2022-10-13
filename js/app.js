@@ -189,7 +189,7 @@ function getEmptyCell(board = gBoard) {
 }
 
 function getClassName(pos, type) {
-  const className = `cell-${pos.i}-${pos.j} ${type.toLowerCase()`
+  const className = `cell-${pos.i}-${pos.j} ${type.toLowerCase()}`
   return className
 }
 
