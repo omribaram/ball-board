@@ -36,6 +36,10 @@ button:hover {
     font-size: 40px;
 }
 
+.logo {
+    width: 660px;
+}
+
 .board {
     transform: translate3d(0px, 40px, 0px) perspective(75em) rotateX(10deg) scale(1.2);
     border-radius: 10px;
